@@ -20,4 +20,4 @@ after_build:
 
 test:
   assemblies:
-    - ps: RationalNumberTest\bin\$env:configuration\RationalNumberTest.dll
+    - RationalNumberTest\bin\$(configuration)\RationalNumberTest.dll
