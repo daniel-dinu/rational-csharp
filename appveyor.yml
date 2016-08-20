@@ -16,9 +16,8 @@ build:
   verbosity: minimal
 
 after_build:
-  - dir
-  - cd RationalNumberExample\bin\
-  - dir
+  - cd "RationalNumberExample\bin\$(configuration)"
+  - RationalNumberExample.exe
 
 test:
   assemblies:
