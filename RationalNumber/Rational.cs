@@ -74,7 +74,7 @@ namespace RationalNumber
 
         public Rational(long a, Rational b) : this(a * b.denominator, b.numerator)
         {
-            Console.WriteLine("A");
+
         }
 
         public Rational(Rational a, long b = 1) : this(a.numerator, a.denominator * b)

@@ -17,6 +17,7 @@ build:
 
 after_build:
   - RationalNumberExample\bin\%configuration%\RationalNumberExample.exe
+  - nuget pack RationalNumber\RationalNumber.csproj
 
 test:
   assemblies:
