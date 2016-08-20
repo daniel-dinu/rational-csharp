@@ -20,7 +20,7 @@ script:
 
 after_script:
   - mono ./RationalNumberExample/bin/${configuration}/RationalNumberExample.exe
-  - nuget
+  - nuget pack ./RationalNumber/RationalNumber.csproj
 
 notifications:
   email: false
