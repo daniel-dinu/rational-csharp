@@ -12,7 +12,10 @@ install:
   - nuget restore Rational.sln
 
 script:
+  - xbuild /p:Configuration=Debug Rational.sln
   - xbuild /p:Configuration=Release Rational.sln
 
 after_script:
-  - ./RationalNumberExample/bin/Release/RationalNumberExample.exe
+  - mono ./RationalNumberExample/bin/Debug/RationalNumberExample.exe
+  - mono ./RationalNumberExample/bin/Release/RationalNumberExample.exe
+  - nuget pack RationalNumber\RationalNumber.csproj
