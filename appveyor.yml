@@ -1,0 +1,20 @@
+image: Visual Studio 2015
+
+configuration: 
+  - Debug
+  - Release
+
+matrix:
+  fast_finish: false
+
+before_build:
+  nuget restore Rational.sln
+
+build:
+  parallel: true
+  project: Rational.sln
+  verbosity: minimal
+
+test:
+  assemblies:
+    - RationalNumber.dll
