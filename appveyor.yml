@@ -16,8 +16,8 @@ build:
   verbosity: minimal
 
 after_build:
-  - RationalNumberExample\bin\$(configuration)\RationalNumberExample.exe
+  - RationalNumberExample\bin\Debug\RationalNumberExample.exe
 
 test:
   assemblies:
-    - RationalNumberTest\bin\$(configuration)\RationalNumberTest.dll
+    - RationalNumberTest\bin\Debug\RationalNumberTest.dll
