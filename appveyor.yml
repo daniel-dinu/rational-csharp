@@ -16,7 +16,7 @@ build:
   verbosity: minimal
 
 after_build:
-  - ps: RationalNumberExample\bin\${env:configuration}\RationalNumberExample.exe
+  - RationalNumberExample\bin\$(configuration)\RationalNumberExample.exe
 
 test:
   assemblies:
