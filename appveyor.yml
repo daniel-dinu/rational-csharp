@@ -15,6 +15,9 @@ build:
   project: Rational.sln
   verbosity: minimal
 
+after_build:
+  - ps: RationalNumberExample\bin\$env:configuration\RationalNumberExample.exe
+
 test:
   assemblies:
-    - RationalNumber.dll
+    - ps: RationalNumberTest\bin\$env:configuration\RationalNumberTest.dll
