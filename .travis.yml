@@ -16,9 +16,12 @@ install:
   - nuget restore Rational.sln
 
 script:
-  - if [ "Debug" == "${configuration}" ]; then xbuild /p:Configuration=Debug Rational.sln; fi
-  - if [ "Release" == "${configuration}" ]; then xbuild /p:Configuration=Release Rational.sln; fi
+  - if [[ $configuration == 'Debug' ]]; then xbuild /p:Configuration=Debug Rational.sln; fi
+  - if [[ $configuration == 'Release' ]]; then xbuild /p:Configuration=Release Rational.sln; fi
 
 after_script:
   - mono ./RationalNumberExample/bin/${configuration}/RationalNumberExample.exe
-  - nuget pack RationalNumber/RationalNumber.csproj
+  - nuget
+
+notifications:
+  email: false
