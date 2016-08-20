@@ -16,7 +16,7 @@ install:
   - nuget restore Rational.sln
 
 script:
-  - xbuild /p:Configuration=${configuration} Rational.sln
+  - xbuild /p:Configuration="${configuration}" Rational.sln
 
 after_script:
   - mono ./RationalNumberExample/bin/${configuration}/RationalNumberExample.exe
