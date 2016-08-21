@@ -11,6 +11,8 @@ env:
 
 solution: Rational.sln
 
+sudo: required
+
 install:
   - nuget restore Rational.sln
 
