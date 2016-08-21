@@ -30,8 +30,8 @@ after_test:
   - dir tools\
   - dir tools\OpenCover.4.6.519\
   - dir tools\OpenCover.4.6.519\tools\
-  - dir tools\NUnit.Runners.3.4.1\
-  - dir tools\NUnit.Runners.3.4.1\tools\
+  - dir tools\NUnit.ConsoleRunner.3.4.1\
+  - dir tools\NUnit.ConsoleRunner.3.4.1\tools\
   - tools\OpenCover.4.6.519\tools\OpenCover.Console.exe -register:user -target:tools\NUnit.ConsoleRunner.3.4.1\tools\nunit-console.exe -targetargs:"RationalNumberTest\bin\%configuration%\RationalNumberTest.dll /noshadow"
   - "SET PATH=C:\\Python34;C:\\Python34\\Scripts;%PATH%"
   - pip install codecov
