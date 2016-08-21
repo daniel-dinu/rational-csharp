@@ -25,7 +25,7 @@ after_script:
   - nuget install NUnit.Runners -Version 3.4.1
   - nuget install OpenCover -Version 4.6.519
   - ./packages/OpenCover.4.6.519/tools/OpenCover.Console.exe -register:user -target:"packages/NUnit.Runners.3.4.1/tools/nunit-console.exe ./RRationalNumberTest/bin/${configuration}/RationalNumberTest.dll /noshadow"
-  - bash <(curl -s https://codecov.io/bash)
+  #- bash <(curl -s https://codecov.io/bash)
 
 notifications:
   email: false
