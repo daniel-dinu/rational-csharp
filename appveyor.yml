@@ -24,14 +24,14 @@ test:
     - RationalNumberTest\bin\$(configuration)\RationalNumberTest.dll
 
 after_test:
-  - nuget install NUnit.Runners -Version 2.6.4 -OutputDirectory tools
+  - nuget install NUnit.Runners -Version 3.4.1 -OutputDirectory tools
   - nuget install OpenCover -Version 4.6.519 -OutputDirectory tools
   - dir tools\
   - dir tools\OpenCover.4.6.519\
   - dir tools\OpenCover.4.6.519\tools\
-  - dir tools\NUnit.Runners.2.6.4\
-  - dir tools\NUnit.Runners.2.6.4\tools\
-  - tools\OpenCover.4.6.519\tools\OpenCover.Console.exe -register:user -target:tools\NUnit.Runners.2.6.4\tools\nunit-console.exe -targetargs:"RationalNumberTest\bin\%configuration%\RationalNumberTest.dll /noshadow"
+  - dir tools\NUnit.Runners.3.4.1\
+  - dir tools\NUnit.Runners.3.4.1\tools\
+  - tools\OpenCover.4.6.519\tools\OpenCover.Console.exe -register:user -target:tools\NUnit.ConsoleRunner.3.4.1\tools\nunit-console.exe -targetargs:"RationalNumberTest\bin\%configuration%\RationalNumberTest.dll /noshadow"
   - "SET PATH=C:\\Python34;C:\\Python34\\Scripts;%PATH%"
   - pip install codecov
   - codecov -f "MyProject_coverage.xml"
