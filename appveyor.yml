@@ -27,12 +27,7 @@ after_test:
   - nuget install NUnit.Runners -Version 3.4.1 -OutputDirectory tools
   - nuget install NUnit.ConsoleRunner -Version 3.4.1 -OutputDirectory tools
   - nuget install OpenCover -Version 4.6.519 -OutputDirectory tools
-  - dir tools\
-  - dir tools\OpenCover.4.6.519\
-  - dir tools\OpenCover.4.6.519\tools\
-  - dir tools\NUnit.ConsoleRunner.3.4.1\
-  - dir tools\NUnit.ConsoleRunner.3.4.1\tools\
-  - tools\OpenCover.4.6.519\tools\OpenCover.Console.exe -target:tools\NUnit.ConsoleRunner.3.4.1\tools\nunit3-console.exe -targetargs:"/nologo /noshadow RationalNumberTest\bin\%configuration%\RationalNumberTest.dll" -register:user
+  - tools\OpenCover.4.6.519\tools\OpenCover.Console.exe -target:tools\NUnit.ConsoleRunner.3.4.1\tools\nunit3-console.exe -targetargs:"RationalNumberTest\bin\%configuration%\RationalNumberTest.dll" -register:user
   - "SET PATH=C:\\Python34;C:\\Python34\\Scripts;%PATH%"
   - pip install codecov
-  - codecov -f "MyProject_coverage.xml"
+  - codecov -f "TestResult.xml"
