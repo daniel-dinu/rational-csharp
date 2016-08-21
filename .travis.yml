@@ -11,22 +11,11 @@ env:
 
 solution: Rational.sln
 
-sudo: required
-
 install:
   - nuget restore Rational.sln
 
 script:
   - xbuild /p:Configuration=$configuration Rational.sln
-
-after_success:
-  - nuget install NUnit.Runners -Version 3.4.1 -OutputDirectory tools
-  - nuget install OpenCover -Version 4.6.519 -OutputDirectory tools
-  - ls -la ./tools/OpenCover.4.6.519/tools/OpenCover.Console.exe
-  - chmod u+x ./tools/OpenCover.4.6.519/tools/OpenCover.Console.exe
-  - ls -la ./tools/OpenCover.4.6.519/tools/OpenCover.Console.exe
-  - ./tools/OpenCover.4.6.519/tools/OpenCover.Console.exe -register:user -target:"tools/NUnit.Runners.3.4.1/tools/nunit-console.exe ./RationalNumberTest/bin/${configuration}/RationalNumberTest.dll /noshadow"
-  - bash <(curl -s https://codecov.io/bash)
 
 after_script:
   - mono ./RationalNumberExample/bin/${configuration}/RationalNumberExample.exe
