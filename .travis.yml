@@ -17,15 +17,15 @@ install:
 script:
   - xbuild /p:Configuration=$configuration Rational.sln
 
+after_success:
+  - nuget install NUnit.Runners -Version 3.4.1 -OutputDirectory tools
+  - nuget install OpenCover -Version 4.6.519 -OutputDirectory tools
+  - ./tools/OpenCover.4.6.519/tools/OpenCover.Console.exe -register:user -target:"tools/NUnit.Runners.3.4.1/tools/nunit-console.exe ./RRationalNumberTest/bin/${configuration}/RationalNumberTest.dll /noshadow"
+  - bash <(curl -s https://codecov.io/bash)
+
 after_script:
   - mono ./RationalNumberExample/bin/${configuration}/RationalNumberExample.exe
   - nuget pack ./RationalNumber/RationalNumber.csproj
-
-after_success:
-  - nuget install NUnit.Runners -Version 3.4.1
-  - nuget install OpenCover -Version 4.6.519
-  - ./packages/OpenCover.4.6.519/tools/OpenCover.Console.exe -register:user -target:"packages/NUnit.Runners.3.4.1/tools/nunit-console.exe ./RRationalNumberTest/bin/${configuration}/RationalNumberTest.dll /noshadow"
-  - bash <(curl -s https://codecov.io/bash)
 
 notifications:
   email: false
