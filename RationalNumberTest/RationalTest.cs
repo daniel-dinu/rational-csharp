@@ -13,7 +13,7 @@ namespace RationalNumberTest
             () => new Rational(new Rational(), new Rational())
         };
 
-        [Test, TestCaseSource(nameof(ConstructorZeroDivisionErrorTestCases))]
+        [TestCaseSource(nameof(ConstructorZeroDivisionErrorTestCases))]
         public void TestConstructorZeroDivisonError(TestDelegate action)
         {
             Assert.Throws<DivideByZeroException>(action);
@@ -31,7 +31,7 @@ namespace RationalNumberTest
             new object[] { -2, -4, 1, 2 }
         };
 
-        [Test, TestCaseSource(nameof(ConstructorIntegerIntegerTestCases))]
+        [TestCaseSource(nameof(ConstructorIntegerIntegerTestCases))]
         public void TestConstructorIntegerInteger(long numerator, long denominator, long expectedNumerator, long expectedDenominator)
         {
             Rational r = new Rational(numerator, denominator);
@@ -53,7 +53,7 @@ namespace RationalNumberTest
             new object[] { -2, new Rational(1, 2), -4, 1 }
         };
 
-        [Test, TestCaseSource(nameof(ConstructorIntegerRationalTestCases))]
+        [TestCaseSource(nameof(ConstructorIntegerRationalTestCases))]
         public void TestConstructorIntegerRational(long numerator, Rational denominator, long expectedNumerator, long expectedDenominator)
         {
             Rational r = new Rational(numerator, denominator);
@@ -75,7 +75,7 @@ namespace RationalNumberTest
             new object[] { new Rational(-1, 2), -2, 1, 4 }
         };
 
-        [Test, TestCaseSource(nameof(ConstructorRationalIntegerTestCases))]
+        [TestCaseSource(nameof(ConstructorRationalIntegerTestCases))]
         public void TestConstructorRationalInteger(Rational numerator, long denominator, long expectedNumerator, long expectedDenominator)
         {
             Rational r = new Rational(numerator, denominator);
@@ -99,7 +99,7 @@ namespace RationalNumberTest
             new object[] { new Rational(-1, 4), new Rational(-1, 2), 1, 2 }
         }; 
 
-        [Test, TestCaseSource(nameof(ConstructorRationalRationalTestCases))]
+        [TestCaseSource(nameof(ConstructorRationalRationalTestCases))]
         public void TestConstructorRationalRational(Rational numerator, Rational denominator, long expectedNumerator, long expectedDenominator)
         {
             Rational r = new Rational(numerator, denominator);
@@ -130,7 +130,7 @@ namespace RationalNumberTest
             new object[] { -4, -2, 2, 1 }
         };
 
-        [Test, TestCaseSource(nameof(KnownTestCases))]
+        [TestCaseSource(nameof(KnownTestCases))]
         public void TestConstructorNumerator(long numerator, long denominator, long expectedNumerator, long expectedDenominator)
         {
             Rational r = new Rational(numerator, denominator);
@@ -138,7 +138,7 @@ namespace RationalNumberTest
         }
 
 
-        [Test, TestCaseSource(nameof(KnownTestCases))]
+        [TestCaseSource(nameof(KnownTestCases))]
         public void TestConstructorDenominator(long numerator, long denominator, long expectedNumerator, long expectedDenominator)
         {
             Rational r = new Rational(numerator, denominator);
@@ -146,7 +146,7 @@ namespace RationalNumberTest
         }
 
 
-        [Test, TestCaseSource(nameof(KnownTestCases))]
+        [TestCaseSource(nameof(KnownTestCases))]
         public void TestValue(long numerator, long denominator, long expectedNumerator, long expectedDenominator)
         {
             Rational r = new Rational(numerator, denominator);
@@ -155,7 +155,7 @@ namespace RationalNumberTest
         }
 
 
-        [Test, TestCaseSource(nameof(KnownTestCases))]
+        [TestCaseSource(nameof(KnownTestCases))]
         public void TestQuotient(long numerator, long denominator, long expectedNumerator, long expectedDenominator)
         {
             Rational r = new Rational(numerator, denominator);
@@ -206,7 +206,7 @@ namespace RationalNumberTest
         }
 
 
-        [Test, TestCaseSource(nameof(KnownTestCases))]
+        [TestCaseSource(nameof(KnownTestCases))]
         public void TestRepresentation(long numerator, long denominator, long expectedNumerator, long expectedDenominator)
         {
             Rational r = new Rational(numerator, denominator);
@@ -215,7 +215,7 @@ namespace RationalNumberTest
         }
 
 
-        [Test, TestCaseSource(nameof(KnownTestCases))]
+        [TestCaseSource(nameof(KnownTestCases))]
         public void TestToString(long numerator, long denominator, long expectedNumerator, long expectedDenominator)
         {
             Rational r = new Rational(numerator, denominator);
@@ -234,7 +234,7 @@ namespace RationalNumberTest
         }
 
 
-        [Test, TestCaseSource(nameof(KnownTestCases))]
+        [TestCaseSource(nameof(KnownTestCases))]
         public void TestMinus(long numerator, long denominator, long expectedNumerator, long expectedDenominator)
         {
             Rational r = -new Rational(numerator, denominator);
@@ -243,7 +243,7 @@ namespace RationalNumberTest
         }
 
 
-        [Test, TestCaseSource(nameof(KnownTestCases))]
+        [TestCaseSource(nameof(KnownTestCases))]
         public void TestPlus(long numerator, long denominator, long expectedNumerator, long expectedDenominator)
         {
             Rational r = +new Rational(numerator, denominator);
@@ -252,7 +252,7 @@ namespace RationalNumberTest
         }
 
 
-        [Test, TestCaseSource(nameof(KnownTestCases))]
+        [TestCaseSource(nameof(KnownTestCases))]
         public void TestAbs(long numerator, long denominator, long expectedNumerator, long expectedDenominator)
         {
             Rational r = new Rational(numerator, denominator).Abs;
@@ -265,14 +265,14 @@ namespace RationalNumberTest
             () => { Rational r = ~new Rational(); }
         };
 
-        [Test, TestCaseSource(nameof(InvertZeroDivisionErrorTestCases))]
+        [TestCaseSource(nameof(InvertZeroDivisionErrorTestCases))]
         public void TestInvertZeroDivisionError(TestDelegate action)
         {
             Assert.Throws<DivideByZeroException>(action);
         }
 
 
-        [Test, TestCaseSource(nameof(KnownTestCases))]
+        [TestCaseSource(nameof(KnownTestCases))]
         public void TestInvert(long numerator, long denominator, long expectedNumerator, long expectedDenominator)
         {
             Rational r = ~new Rational(numerator, denominator);
@@ -316,7 +316,7 @@ namespace RationalNumberTest
             new object[] {null, new Rational(), false}
         };
 
-        [Test, TestCaseSource(nameof(EqualToTestCases))]
+        [TestCaseSource(nameof(EqualToTestCases))]
         public void TestEqualTo(Rational r1, Rational r2, bool expectedValue)
         {
             Assert.AreEqual(expectedValue, r1 == r2);
@@ -344,7 +344,7 @@ namespace RationalNumberTest
             new object[] {null, null, false}
         };
 
-        [Test, TestCaseSource(nameof(NotEqualToTestCases))]
+        [TestCaseSource(nameof(NotEqualToTestCases))]
         public void TestNotEqualTo(Rational r1, Rational r2, bool expectedValue)
         {
             Assert.AreEqual(expectedValue, r1 != r2);
@@ -361,7 +361,7 @@ namespace RationalNumberTest
             new object[] { new Rational(), null, false }
         };
 
-        [Test, TestCaseSource(nameof(EqualsTestCases))]
+        [TestCaseSource(nameof(EqualsTestCases))]
         public void TestEquals(Rational r, object o, bool expectedValue)
         {
             Assert.AreEqual(expectedValue, r.Equals(o));
@@ -377,7 +377,7 @@ namespace RationalNumberTest
             new object[] { new Rational(1, 3), RationalObject, false }
         };
 
-        [Test, TestCaseSource(nameof(GetHashCodeTestCases))]
+        [TestCaseSource(nameof(GetHashCodeTestCases))]
         public void TestGetHashCode(Rational r1, Rational r2, bool expectedValue)
         {
             Assert.AreEqual(expectedValue, r1.GetHashCode() == r2.GetHashCode());
@@ -401,7 +401,7 @@ namespace RationalNumberTest
             new object[] { new Rational(-1, 4), new Rational(-1, 2), false }
         };
 
-        [Test, TestCaseSource(nameof(LessThanTestCases))]
+        [TestCaseSource(nameof(LessThanTestCases))]
         public void TestLessThan(Rational r1, Rational r2, bool expectedValue)
         {
             Assert.AreEqual(expectedValue, r1 < r2);
@@ -425,7 +425,7 @@ namespace RationalNumberTest
             new object[] { new Rational(-1, 2), new Rational(-1, 4), false }
         };
 
-        [Test, TestCaseSource(nameof(GreaterThanTestCases))]
+        [TestCaseSource(nameof(GreaterThanTestCases))]
         public void TestGreaterThan(Rational r1, Rational r2, bool expectedValue)
         {
             Assert.AreEqual(expectedValue, r1 > r2);
@@ -449,7 +449,7 @@ namespace RationalNumberTest
             new object[] { new Rational(-1, 4), new Rational(-1, 2), false }
         };
 
-        [Test, TestCaseSource(nameof(LessThanOrEqualToTestCases))]
+        [TestCaseSource(nameof(LessThanOrEqualToTestCases))]
         public void TestLessThanOrEqualTo(Rational r1, Rational r2, bool expectedValue)
         {
             Assert.AreEqual(expectedValue, r1 <= r2);
@@ -473,7 +473,7 @@ namespace RationalNumberTest
             new object[] { new Rational(-1, 2), new Rational(-1, 4), false }
         };
 
-        [Test, TestCaseSource(nameof(GreaterThanOrEqualToTestCases))]
+        [TestCaseSource(nameof(GreaterThanOrEqualToTestCases))]
         public void TestGreaterThanOrEqualTo(Rational r1, Rational r2, bool expectedValue)
         {
             Assert.AreEqual(expectedValue, r1 >= r2);
@@ -491,7 +491,7 @@ namespace RationalNumberTest
             new object[] { new Rational(1, 2), new Rational(1, 3), new Rational(5, 6) }
         };
 
-        [Test, TestCaseSource(nameof(AdditionOfRationalAndRationalTestCases))]
+        [TestCaseSource(nameof(AdditionOfRationalAndRationalTestCases))]
         public void TestAdditionOfRationalAndRational(Rational r1, Rational r2, Rational expectedResult)
         {
             Rational r = r1 + r2;
@@ -504,7 +504,7 @@ namespace RationalNumberTest
             new object[] { new Rational(2), 1, new Rational(3) }
         };
 
-        [Test, TestCaseSource(nameof(AdditionOfRationalAndIntegerTestCases))]
+        [TestCaseSource(nameof(AdditionOfRationalAndIntegerTestCases))]
         public void TestAdditionOfRationalAndInteger(Rational r1, long r2, Rational expectedResult)
         {
             Rational r = r1 + r2;
@@ -523,7 +523,7 @@ namespace RationalNumberTest
             new object[] { 1, new Rational(1, 3), new Rational(4, 3) }
         };
 
-        [Test, TestCaseSource(nameof(AdditionOfIntegerAndRationalTestCases))]
+        [TestCaseSource(nameof(AdditionOfIntegerAndRationalTestCases))]
         public void TestAdditionOfIntegerAndRational(long r1, Rational r2, Rational expectedResult)
         {
             Rational r = r1 + r2;
@@ -543,7 +543,7 @@ namespace RationalNumberTest
             new object[] { new Rational(1, 2), new Rational(1, 3), new Rational(1, 6) }
         };
 
-        [Test, TestCaseSource(nameof(SubtractionOfRationalAndRationalTestCases))]
+        [TestCaseSource(nameof(SubtractionOfRationalAndRationalTestCases))]
         public void TestSubstractionOfRationalAndRational(Rational r1, Rational r2, Rational expectedResult)
         {
             Rational r = r1 - r2;
@@ -557,7 +557,7 @@ namespace RationalNumberTest
             new object[] { new Rational(2), 1, new Rational(1) }
         };
 
-        [Test, TestCaseSource(nameof(SubtractionOfRationalAndIntegerTestCases))]
+        [TestCaseSource(nameof(SubtractionOfRationalAndIntegerTestCases))]
         public void TestSubtractionOfRationalAndInteger(Rational r1, long r2, Rational expectedResult)
         {
             Rational r = r1 - r2;
@@ -576,7 +576,7 @@ namespace RationalNumberTest
             new object[] { 1, new Rational(-3, 4), new Rational(7, 4) },
             new object[] { 1, new Rational(1, 3), new Rational(2, 3) }
         };
-        [Test, TestCaseSource(nameof(SubtractionOfIntegerAndRationalTestCases))]
+        [TestCaseSource(nameof(SubtractionOfIntegerAndRationalTestCases))]
         public void TestSubtractionOfIntegerAndRational(long r1, Rational r2, Rational expectedResult)
         {
             Rational r = r1 - r2;
@@ -596,7 +596,7 @@ namespace RationalNumberTest
             new object[] { new Rational(1, 2), new Rational(1, 3), new Rational(1, 6) }
         };
 
-        [Test, TestCaseSource(nameof(MultiplicationOfRationalAndRationalTestCases))]
+        [TestCaseSource(nameof(MultiplicationOfRationalAndRationalTestCases))]
         public void TestMultiplicationOfRationalAndRational(Rational r1, Rational r2, Rational expectedResult)
         {
             Rational r = r1 * r2;
@@ -610,7 +610,7 @@ namespace RationalNumberTest
             new object[] { new Rational(2), -1, new Rational(-2) }
         };
 
-        [Test, TestCaseSource(nameof(MultiplicationOfRationalAndIntegerTestCases))]
+        [TestCaseSource(nameof(MultiplicationOfRationalAndIntegerTestCases))]
         public void TestMultiplicationOfRationalAndInteger(Rational r1, long r2, Rational expectedResult)
         {
             Rational r = r1 * r2;
@@ -630,7 +630,7 @@ namespace RationalNumberTest
             new object[] { 1, new Rational(1, 3), new Rational(1, 3) }
         };
 
-        [Test, TestCaseSource(nameof(MultiplicationOfIntegerAndRationalTestCases))]
+        [TestCaseSource(nameof(MultiplicationOfIntegerAndRationalTestCases))]
         public void TestMultiplicationOfIntegerAndRational(long r1, Rational r2, Rational expectedResult)
         {
             Rational r = r1 * r2;
@@ -645,7 +645,7 @@ namespace RationalNumberTest
             () => { Rational r = 1 / new Rational(); }
         };
 
-        [Test, TestCaseSource(nameof(DivisionZeroDivisionErrorTestCases))]
+        [TestCaseSource(nameof(DivisionZeroDivisionErrorTestCases))]
         public void TestDivisionZeroDivisonError(TestDelegate action)
         {
             Assert.Throws<DivideByZeroException>(action);
@@ -662,7 +662,7 @@ namespace RationalNumberTest
             new object[] { new Rational(1, 2), new Rational(1, 3), new Rational(3, 2) }
         };
 
-        [Test, TestCaseSource(nameof(DivisionRationalAndRationalTestCases))]
+        [TestCaseSource(nameof(DivisionRationalAndRationalTestCases))]
         public void TestDivisionRationalAndRational(Rational r1, Rational r2, Rational expectedResult)
         {
             Rational r = r1 / r2;
@@ -676,7 +676,7 @@ namespace RationalNumberTest
             new object[] { new Rational(2), -1, new Rational(-2) }
         };
 
-        [Test, TestCaseSource(nameof(DivisionRationalAndIntegerTestCases))]
+        [TestCaseSource(nameof(DivisionRationalAndIntegerTestCases))]
         public void TestDivisionRationalAndInteger(Rational r1, long r2, Rational expectedResult)
         {
             Rational r = r1 / r2;
@@ -695,7 +695,7 @@ namespace RationalNumberTest
             new object[] { 1, new Rational(1, 3), new Rational(3) }
         };
 
-        [Test, TestCaseSource(nameof(DivisionIntegerAndRationalTestCases))]
+        [TestCaseSource(nameof(DivisionIntegerAndRationalTestCases))]
         public void TestDivisionIntegerAndRational(long r1, Rational r2, Rational expectedResult)
         {
             Rational r = r1 / r2;
@@ -710,7 +710,7 @@ namespace RationalNumberTest
             () => { Rational r = new Rational() ^ -1; }
         };
 
-        [Test, TestCaseSource(nameof(PowerDivideByZeroErrorTestCases))]
+        [TestCaseSource(nameof(PowerDivideByZeroErrorTestCases))]
         public void TestDivideByZeroError(TestDelegate action)
         {
             Assert.Throws<DivideByZeroException>(action);
@@ -731,7 +731,7 @@ namespace RationalNumberTest
             () => { double r = -1 ^ new Rational(-1, 3); }
         };
 
-        [Test, TestCaseSource(nameof(PowerArgumentErrorTestCases))]
+        [TestCaseSource(nameof(PowerArgumentErrorTestCases))]
         public void TestArgumentZeroError(TestDelegate action)
         {
             Assert.Throws<ArgumentException>(action);
@@ -777,7 +777,7 @@ namespace RationalNumberTest
             new object[] { new Rational(-1, 3), 3, new Rational(-1, 27) }
         };
 
-        [Test, TestCaseSource(nameof(RationalRaisedToIntegerTestCases))]
+        [TestCaseSource(nameof(RationalRaisedToIntegerTestCases))]
         public void TestRationalRaisedToInteger(Rational r1, long r2, Rational expectedResult)
         {
             Rational r = r1 ^ r2;
@@ -816,7 +816,7 @@ namespace RationalNumberTest
             new object[] { -2, new Rational(-2), 0.25 }
         };
 
-        [Test, TestCaseSource(nameof(IntegerRaisedToRationalTestCases))]
+        [TestCaseSource(nameof(IntegerRaisedToRationalTestCases))]
         public void TestIntegerRaisedToRational(long r1, Rational r2, double expectedResult)
         {
             double result = r1 ^ r2;
