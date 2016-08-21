@@ -20,7 +20,6 @@ script:
   - xbuild /p:Configuration=$configuration Rational.sln
 
 after_success:
-  - nuget install NUnit.Runners -Version 3.4.1 -OutputDirectory tools
   - nuget install NUnit.ConsoleRunner -Version 3.4.1 -OutputDirectory tools
   - nuget install OpenCover -Version 4.6.519 -OutputDirectory tools
   - chmod u+x ./tools/OpenCover.4.6.519/tools/OpenCover.Console.exe
